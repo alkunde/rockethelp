@@ -22,13 +22,8 @@ export function Home() {
   const { colors } = useTheme();
   const navigation = useNavigation();
 
+  const [orders, setOrders] = useState<OrderProps[]>([]);
   const [statusSelected, setStatusSelected] = useState<'open' | 'closed'>('open');
-  const [orders, setOrders] = useState<OrderProps[]>([{
-    id: '1123',
-    patrimony: 'ppaa0',
-    when: '18/07/2022 às 14:00',
-    status: 'open'
-  }]);
 
   function handleNewOrder() {
     navigation.navigate('new');
@@ -39,8 +34,9 @@ export function Home() {
   }
 
   return (
-    <VStack flex={1} pb={6} bg='gray.700'>
+    <VStack testID='container' flex={1} pb={6} bg='gray.700'>
       <HStack
+        testID='container-title'
         w='full'
         justifyContent='space-between'
         alignItems='center'
@@ -52,6 +48,7 @@ export function Home() {
         <Logo />
 
         <IconButton
+          testID='button-back'
           icon={<SignOut size={26} color={colors.gray[300]} />}
         />
       </HStack>
@@ -75,6 +72,7 @@ export function Home() {
 
         <HStack space={3} mb={8}>
           <Filter
+            testID='button-open'
             type='open'
             title='em andamento'
             onPress={() => setStatusSelected('open')}
@@ -82,6 +80,7 @@ export function Home() {
           />
 
           <Filter
+            testID='button-closed'
             type='closed'
             title='finalizadas'
             onPress={() => setStatusSelected('closed')}
@@ -96,9 +95,12 @@ export function Home() {
           showsVerticalScrollIndicator={false}
           contentContainerStyle={{ paddingBottom: 50 }}
           ListEmptyComponent={() => (
-            <Center>
+            <Center
+              testID='empty-container'
+            >
               <ChatTeardropText color={colors.gray[300]} size={40} />
               <Text
+                testID='empty-text'
                 color='gray.300'
                 fontSize='xl'
                 mt={6}
@@ -112,6 +114,7 @@ export function Home() {
         />
 
         <Button
+          testID='button-new'
           title='Nova solicitação'
           onPress={handleNewOrder}
         />
