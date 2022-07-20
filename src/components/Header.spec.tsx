@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from '@testing-library/react-native';
+import { fireEvent, render } from '@testing-library/react-native';
 import { NativeBaseProvider } from 'native-base';
 import { THEME } from  '../styles/theme';
 
@@ -18,7 +18,7 @@ jest.mock('@react-navigation/native', () => {
   return {
     ...actualNav,
     useNavigation: () => ({
-      navigate: mockedNavigate,
+      goBack: mockedNavigate,
     }),
   };
 });
@@ -28,12 +28,14 @@ describe('Header', () => {
     const { getByTestId } = render(
        <Header
         title='Fechadas'
-      />,
+       />,
        {
         wrapper: Providers
        }
     );
 
-    console.log('teste');
+    const backButton = getByTestId('button-back');
+    fireEvent.press(backButton);
+    expect(mockedNavigate).toHaveBeenCalledTimes(1);
   });
 });

@@ -23,6 +23,7 @@ describe('Filter', () => {
        }
     );
 
-    console.log('teste');
+    const filter = getByTestId('filter-Fechadas');
+    console.log(filter.props.styles);
   });
 });

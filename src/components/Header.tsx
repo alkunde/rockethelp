@@ -22,6 +22,7 @@ export function Header({ title, ...rest }: Props) {
 
   return (
     <HStack
+      testID='header'
       w='full'
       justifyContent='space-between'
       alignItems='center'
@@ -31,11 +32,13 @@ export function Header({ title, ...rest }: Props) {
       {...rest}
     >
       <IconButton
+        testID='button-back'
         icon={<CaretLeft color={colors.gray[200]} size={24} />}
         onPress={handleGoBack}
       />
 
       <Heading
+        testID='title'
         color='gray.100'
         textAlign='center'
         fontSize='lg'
