@@ -5,6 +5,7 @@ import { THEME } from  './src/styles/theme';
 
 import { Loading } from './src/components/Loading';
 import { Routes } from './src/routes';
+import Intro from './src/screens/Intro';
 
 export default function App() {
   const [fontsLoaded] = useFonts({
@@ -20,7 +21,7 @@ export default function App() {
         translucent
       />
 
-      {fontsLoaded ? <Routes /> : <Loading />}
+      {fontsLoaded ? <Intro /> : <Loading />}
     </NativeBaseProvider>
   );
 }

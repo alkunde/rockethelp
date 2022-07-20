@@ -12,6 +12,7 @@ export function Filter({ title, isActive = false, type, ...rest }: Props) {
   const colorType = type === 'open' ? colors.secondary[700] : colors.green[300];
   return (
     <Button
+      testID={`filter-${title}`}
       variant='outline'
       borderWidth={isActive ? 1 : 0}
       borderColor={colorType}
@@ -21,6 +22,7 @@ export function Filter({ title, isActive = false, type, ...rest }: Props) {
       {...rest}
     >
       <Text
+        testID={`filter-title-${title}`}
         color={isActive ? colorType : 'gray.300'}
         fontSize='xs'
         textTransform='uppercase'
