@@ -1,12 +1,6 @@
-import { useNavigation } from '@react-navigation/native';
-import {
-  HStack,
-  IconButton,
-  useTheme,
-  StyledProps,
-  Heading,
-} from 'native-base';
+import { Heading, HStack, IconButton, useTheme, StyledProps } from 'native-base';
 import { CaretLeft } from 'phosphor-react-native';
+import { useNavigation } from '@react-navigation/native';
 
 type Props = StyledProps & {
   title: string;
@@ -22,10 +16,10 @@ export function Header({ title, ...rest }: Props) {
 
   return (
     <HStack
-      w='full'
-      justifyContent='space-between'
-      alignItems='center'
-      bg='gray.600'
+      w="full"
+      justifyContent="space-between"
+      alignItems="center"
+      bg="gray.600"
       pb={6}
       pt={12}
       {...rest}
@@ -35,16 +29,9 @@ export function Header({ title, ...rest }: Props) {
         onPress={handleGoBack}
       />
 
-      <Heading
-        color='gray.100'
-        textAlign='center'
-        fontSize='lg'
-        flex={1}
-        ml={-6}
-      >
+      <Heading color="gray.100" textAlign="center" fontSize="lg" flex={1} ml={-6}>
         {title}
       </Heading>
-
     </HStack>
   );
 }

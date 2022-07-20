@@ -7,18 +7,18 @@ import Logo from '../assets/logo_primary.svg';
 import { Input } from '../components/Input';
 import { Button } from '../components/Button';
 
-export const SignIn: React.FC = () => {
-  const { colors } = useTheme();
-
+export function SignIn() {
   const [name, setName] = useState('');
   const [password, setPassword] = useState('');
+
+  const { colors } = useTheme();
 
   function handleSignIn() {
     console.log(name, password);
   }
 
   return (
-    <VStack flex={1} alignItems='center' bg="gray.600" px={8} pt={24}>
+    <VStack flex={1} alignItems="center" bg="gray.600" px={8} pt={24}>
       <Logo />
 
       <Heading color="gray.100" fontSize="xl" mt={20} mb={6}>
@@ -27,25 +27,20 @@ export const SignIn: React.FC = () => {
 
       <Input
         mb={4}
-        placeholder='E-mail'
-        value={name}
+        placeholder="E-mail"
         InputLeftElement={<Icon as={<Envelope color={colors.gray[300]} />} ml={4} />}
         onChangeText={setName}
       />
+
       <Input
         mb={8}
-        placeholder='Senha'
-        value={password}
+        placeholder="Senha"
         InputLeftElement={<Icon as={<Key color={colors.gray[300]} />} ml={4} />}
         secureTextEntry
         onChangeText={setPassword}
       />
 
-      <Button
-        w='full'
-        title='Entrar'
-        onPress={() => handleSignIn()}
-      />
+      <Button title="Entrar" w="full" onPress={handleSignIn} />
     </VStack>
-  );
+  )
 }
