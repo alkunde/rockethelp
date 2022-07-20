@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "344595004120",
+    "project_id": "rockethelp-mobiletk",
+    "storage_bucket": "rockethelp-mobiletk.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:344595004120:android:9ef9419bf48f1e93e535ad",
+        "android_client_info": {
+          "package_name": "com.alkunde.rockethelp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "344595004120-pjvljli623aoj9ll9o1o40n7cn3jqp52.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDuABFe8NvwsDaWLQqfGaq-ubizU_AUw4U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "344595004120-pjvljli623aoj9ll9o1o40n7cn3jqp52.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "344595004120-dkg6s519j457no7c7b8bpssj5cmklds4.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.alkunde.rockethelp"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -5,6 +5,17 @@
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"
-    ]
+    ],
+    "puglins": [
+      "@react-native-firebase/app"
+    ],
+    "android": {
+      "package": "com.alkunde.rockethelp",
+      "googleServicesFile": "./google-services.json"
+    },
+    "ios": {
+      "bundleIdentifier": "com.alkunde.rockethelp",
+      "googleServicesFile": "./GoogleService-Info.plist"
+    }
   }
 }
