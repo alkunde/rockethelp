@@ -121,7 +121,7 @@ export function Details() {
 
   return (
     <VStack flex={1} bg='gray.700'>
-      <Box p={6} bg='gray.600'>
+      <Box px={6} bg='gray.600'>
         <Header title='Solicitação' />
       </Box>
 
